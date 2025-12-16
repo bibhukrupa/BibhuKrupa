@@ -3,120 +3,137 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Bibhu Barik | Senior .NET Developer</title>
+  <title>Portfolio</title>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
   <style>
+    * { box-sizing: border-box; }
     body {
-      font-family: 'Poppins', sans-serif;
       margin: 0;
-      background: #f5f7fa;
-      color: #333;
+      font-family: 'Poppins', sans-serif;
+      background: #f4f7fb;
+      color: #1f2937;
     }
     header {
-      background: #0f172a;
+      background: linear-gradient(135deg, #2563eb, #1e40af);
       color: #fff;
-      padding: 40px 20px;
+      padding: 70px 20px;
       text-align: center;
     }
     header h1 {
       margin: 0;
-      font-size: 2.2rem;
+      font-size: 2.8rem;
+      font-weight: 600;
     }
     header p {
-      margin-top: 8px;
-      font-weight: 300;
+      margin-top: 12px;
+      font-size: 1.1rem;
+      opacity: 0.95;
     }
-    section {
-      max-width: 900px;
-      margin: 30px auto;
+    .container {
+      max-width: 1100px;
+      margin: -50px auto 40px;
+      padding: 0 20px;
+    }
+    .card {
       background: #fff;
+      border-radius: 14px;
       padding: 30px;
-      border-radius: 10px;
-      box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+      margin-bottom: 30px;
+      box-shadow: 0 15px 35px rgba(0,0,0,0.08);
     }
     h2 {
-      border-bottom: 2px solid #e5e7eb;
-      padding-bottom: 8px;
-      color: #0f172a;
+      margin-top: 0;
+      color: #1e40af;
+      font-size: 1.6rem;
     }
-    ul {
-      padding-left: 20px;
+    p { line-height: 1.7; }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
     }
-    li {
-      margin-bottom: 8px;
-    }
-    .skills span {
-      display: inline-block;
-      background: #e0e7ff;
+    .skill {
+      background: #eef2ff;
+      padding: 14px 18px;
+      border-radius: 10px;
+      text-align: center;
+      font-weight: 500;
       color: #1e3a8a;
-      padding: 6px 12px;
-      border-radius: 20px;
-      margin: 6px 6px 0 0;
-      font-size: 0.9rem;
     }
+    ul { padding-left: 18px; }
+    li { margin-bottom: 8px; }
     footer {
       text-align: center;
-      padding: 20px;
+      padding: 25px 10px;
       color: #6b7280;
+      font-size: 0.9rem;
     }
+    .contact a {
+      display: inline-block;
+      margin: 8px 12px;
+      color: #2563eb;
+      text-decoration: none;
+      font-weight: 500;
+    }
+    .contact a:hover { text-decoration: underline; }
   </style>
 </head>
 <body>
 
 <header>
-  <h1>Bibhu Barik</h1>
-  <p>Senior .NET Developer | ASP.NET Core | Microservices</p>
+  <h1>Your Name</h1>
+  <p>Your Role | Your Tech Stack</p>
 </header>
 
-<section>
-  <h2>About Me</h2>
-  <p>
-    Senior .NET Developer with 5+ years of experience in designing, developing, and maintaining enterprise-grade applications. Strong expertise in ASP.NET Core, REST APIs, and backend systems with a focus on clean code and performance.
-  </p>
-</section>
+<div class="container">
 
-<section>
-  <h2>Technical Skills</h2>
-  <div class="skills">
-    <span>C#</span>
-    <span>.NET Core</span>
-    <span>ASP.NET MVC</span>
-    <span>Web API</span>
-    <span>SQL Server</span>
-    <span>Microservices</span>
-    <span>Git</span>
-    <span>Azure</span>
-    <span>REST</span>
+  <div class="card">
+    <h2>About Me</h2>
+    <p>
+      Write a short professional summary about yourself. This section is meant to be concise,
+      recruiter-friendly, and easy to read.
+    </p>
   </div>
-</section>
 
-<section>
-  <h2>Experience</h2>
-  <h3>Senior Software Engineer</h3>
-  <p><strong>Logistics / Enterprise Systems</strong></p>
-  <ul>
-    <li>Designed and developed scalable .NET Core APIs for logistics and supply-chain systems.</li>
-    <li>Worked on complex data flow between multiple enterprise systems.</li>
-    <li>Improved system performance by optimizing SQL queries and API logic.</li>
-    <li>Collaborated with cross-functional teams and reviewed PRs.</li>
-  </ul>
-</section>
+  <div class="card">
+    <h2>Skills</h2>
+    <div class="grid">
+      <div class="skill">Skill 1</div>
+      <div class="skill">Skill 2</div>
+      <div class="skill">Skill 3</div>
+      <div class="skill">Skill 4</div>
+      <div class="skill">Skill 5</div>
+    </div>
+  </div>
 
-<section>
-  <h2>Projects</h2>
-  <ul>
-    <li><strong>Outbound Logistics Integration</strong> – Built and maintained integrations between multiple systems using .NET Core.</li>
-    <li><strong>Archive & Data Processing Module</strong> – Implemented archive logic and validation for large datasets.</li>
-  </ul>
-</section>
+  <div class="card">
+    <h2>Experience</h2>
+    <ul>
+      <li>Describe your responsibility or achievement here.</li>
+      <li>Describe another responsibility or achievement.</li>
+      <li>Add more points as required.</li>
+    </ul>
+  </div>
 
-<section>
-  <h2>Education</h2>
-  <p>Bachelor of Technology (B.Tech)</p>
-</section>
+  <div class="card">
+    <h2>Projects</h2>
+    <ul>
+      <li><strong>Project Name</strong> – Short description of the project.</li>
+      <li><strong>Project Name</strong> – Short description of the project.</li>
+    </ul>
+  </div>
+
+  <div class="card contact">
+    <h2>Contact</h2>
+    <a href="#">Email</a>
+    <a href="#">LinkedIn</a>
+    <a href="#">GitHub</a>
+  </div>
+
+</div>
 
 <footer>
-  <p>© 2025 Bibhu Barik</p>
+  © 2025 Your Name
 </footer>
 
 </body>
