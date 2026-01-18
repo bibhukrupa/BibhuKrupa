@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bibhukrupa Barik | Senior Software Developer</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #6366f1; /* Modern Indigo */
+            --secondary: #a855f7; /* Modern Purple */
+            --dark: #1e293b;
+            --light-bg: #f8fafc;
+            --text: #334155;
+            --white: #ffffff;
+            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            color: var(--text);
+            background: var(--light-bg);
+            scroll-behavior: smooth;
+        }
+
+        /* --- MODERN HEADER --- */
+        header {
+            background: linear-gradient(135deg, #4338ca 0%, #7e22ce 100%);
+            color: white;
+            padding: 100px 20px 60px;
+            text-align: center;
+            clip-path: polygon(0 0, 100% 0, 100% 85%, 0% 100%);
+        }
+
+        .profile-img {
+            width: 160px;
+            height: 160px;
+            border-radius: 50%;
+            border: 6px solid rgba(255, 255, 255, 0.2);
+            object-fit: cover;
+            margin-bottom: 25px;
+            transition: var(--transition);
+        }
+
+        .profile-img:hover {
+            transform: scale(1.05);
+            border-color: var(--white);
+        }
+
+        h1 {
+            font-size: clamp(2rem, 5vw, 3rem);
+            font-weight: 800;
+            letter-spacing: -1px;
+            margin-bottom: 10px;
+        }
+
+        .subtitle {
+            font-size: 1.25rem;
+            font-weight: 300;
+            opacity: 0.9;
+            margin-bottom: 25px;
+        }
+
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+            flex-wrap: wrap;
+            font-size: 0.9rem;
+        }
+
+        /* --- STICKY NAV --- */
+        nav {
+            background: rgba(30, 41, 59, 0.8);
+            backdrop-filter: blur(10px);
+            padding: 10px 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            gap: 5px;
+            flex-wrap: wrap;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            padding: 8px 18px;
+            font-weight: 500;
+            font-size: 0.9rem;
+            border-radius: 6px;
+            transition: var(--transition);
+        }
+
+        nav a:hover {
+            background: var(--primary);
+        }
+
+        /* --- CONTAINERS & SECTIONS --- */
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        section {
+            background: var(--white);
+            margin-bottom: 40px;
+            padding: 50px;
+            border-radius: 16px;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.05);
+        }
+
+        h2 {
+            color: var(--dark);
+            font-size: 2rem;
+            margin-bottom: 30px;
+            position: relative;
+            display: inline-block;
+        }
+
+        h2::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: -5px;
+            width: 50px;
+            height: 4px;
+            background: var(--primary);
+            border-radius: 2px;
+        }
+
+        /* --- EXPERIENCE & PROJECTS --- */
+        .experience-item, .project-card {
+            border-left: 4px solid var(--primary);
+            background: #fcfcfd;
+            padding: 25px;
+            border-radius: 0 12px 12px 0;
+            margin-bottom: 30px;
+            transition: var(--transition);
+        }
+
+        .project-card:hover {
+            transform: translateX(10px);
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+        }
+
+        .date {
+            color: var(--primary);
+            font-weight: 600;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            margin-bottom: 10px;
+            display: block;
+        }
+
+        /* --- SKILLS GRID --- */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+        }
+
+        .skill-category {
+            background: var(--light-bg);
+            padding: 20px;
+            border-radius: 12px;
+        }
+
+        .skill-tag {
+            display: inline-block;
+            background: var(--white);
+            padding: 5px 12px;
+            border-radius: 6px;
+            margin: 4px;
+            font-size: 0.85rem;
+            border: 1px solid #e2e8f0;
+        }
+
+        /* --- HOBBIES --- */
+        .hobby-tag {
+            background: var(--dark);
+            color: white;
+            padding: 8px 20px;
+            border-radius: 50px;
+            font-size: 0.9rem;
+            display: inline-block;
+        }
+
+        footer {
+            background: var(--dark);
+            color: white;
+            padding: 50px 20px;
+            text-align: center;
+        }
+
+        @media (max-width: 768px) {
+            section { padding: 30px 20px; }
+            header { padding-top: 60px; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <img src="Bibhu.jpeg" alt="Bibhukrupa Barik" class="profile-img">
+        <h1>Bibhukrupa Barik</h1>
+        <p class="subtitle">Senior Software Developer | .NET & Microservices Expert</p>
+        <div class="contact-info">
+            <span>📍 Bhubaneswar, India</span>
+            <span>📧 bibhukrupabarik@gmail.com</span>
+            <span>📱 +91 7681829976</span>
+        </div>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="#about">About</a></li>
+            <li><a href="#experience">Experience</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#skills">Skills</a></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <section id="about">
+            <h2>About Me</h2>
+            <p class="intro">
+                <strong>Senior Software Engineer</strong> with over 5 years of professional experience in architecting, developing, and maintaining scalable enterprise solutions. 
+                I specialize in building robust backend systems using <strong>C#, .NET Core, and Microservices</strong>. 
+                I am a firm believer in clean code, automated testing, and continuous delivery to provide high-impact value to global clients.
+            </p>
+        </section>
+
+        <section id="experience">
+            <h2>Experience</h2>
+            <div class="experience-item">
+                <span class="date">Jul 2022 - Present</span>
+                <h3>Senior Software Developer</h3>
+                <h4>Esspl | Bhubaneswar</h4>
+                <p>Architecting and maintaining high-performance web applications for global logistics leaders. Focused on performance optimization and end-to-end system scalability using ASP.NET Core.</p>
+            </div>
+            <div class="experience-item">
+                <span class="date">Oct 2020 - Jun 2022</span>
+                <h3>Junior Developer</h3>
+                <h4>Omitritech | Bhubaneswar</h4>
+                <p>Spearheaded the design and deployment of custom web applications from the ground up. Managed database architecture and full-stack integration for client-facing platforms.</p>
+            </div>
+        </section>
+
+        <section id="projects">
+        <h2>Key Projects</h2>
+        <div class="projects-grid">
+          
+          <div class="project-card">
+            <span class="date">ESSPL | Client: Maersk</span>
+            <h3>Supply Chain Platform (SCP)</h3>
+            <p><strong>Focus:</strong> High-scale Microservices & Event Streaming</p>
+            <p style="font-size: 0.85rem; margin-bottom: 15px;"><em>Tech: .NET Core, Microservices, Apache Kafka, Web APIs, SQL Server</em></p>
+            <ul style="margin-left: 18px; font-size: 0.9rem; color: #555;">
+              <li>Engineered .NET Core microservices for seamless supply chain integrations.</li>
+              <li>Developed high-performance REST APIs to process massive data volumes.</li>
+              <li>Implemented Kafka event streaming for real-time synchronization.</li>
+              <li>Optimized SQL Server architecture to ensure system reliability.</li>
+            </ul>
+          </div>
+
+          <div class="project-card">
+            <span class="date">ESSPL | Client: Maersk</span>
+            <h3>Supply Chain Management (SCM)</h3>
+            <p><strong>Focus:</strong> Destination & Customs Logistics</p>
+            <p style="font-size: 0.85rem; margin-bottom: 15px;"><em>Tech: ASP.NET, Web APIs, SQL Server, Production Support</em></p>
+            <ul style="margin-left: 18px; font-size: 0.9rem; color: #555;">
+              <li>Enhanced Web APIs to handle cargo landing and customs clearance workflows.</li>
+              <li>Performed Root Cause Analysis (RCA) on production defects to improve uptime.</li>
+              <li>Implemented shipment processing features for destination-side management.</li>
+              <li>Managed data integrity and validation using advanced SQL querying.</li>
+            </ul>
+          </div>
+
+          <div class="project-card">
+            <span class="date">ESSPL | Client: Maersk</span>
+            <h3>Transport Management Systems (TMS)</h3>
+            <p><strong>Focus:</strong> Origin-to-Port Logistics Planning</p>
+            <p style="font-size: 0.85rem; margin-bottom: 15px;"><em>Tech: ASP.NET, Web APIs, SQL Server, Business Logic</em></p>
+            <ul style="margin-left: 18px; font-size: 0.9rem; color: #555;">
+              <li>Developed business logic for cargo movement from origin to port.</li>
+              <li>Optimized transportation workflows to improve shipment planning efficiency.</li>
+              <li>Resolved critical production issues related to data consistency and process flow.</li>
+              <li>Collaborated with stakeholders to evolve logistics requirements into technical solutions.</li>
+            </ul>
+          </div>
+
+          <div class="project-card">
+            <span class="date">Omitritech | Client: Truckslot</span>
+            <h3>Truck Slot Reservation System</h3>
+            <p><strong>Focus:</strong> End-to-End Application Development</p>
+            <p style="font-size: 0.85rem; margin-bottom: 15px;"><em>Tech: ASP.NET MVC, Web API, ADO.NET, Entity Framework, SQL Server</em></p>
+            <ul style="margin-left: 18px; font-size: 0.9rem; color: #555;">
+              <li>Led the end-to-end development of a reservation system for logistics compliance.</li>
+              <li>Designed the complete database schema and server-side business logic.</li>
+              <li>Integrated REST APIs for real-time slot availability and driver bookings.</li>
+              <li>Managed full lifecycle from initial troubleshooting to production release.</li>
+            </ul>
+          </div>
+
+        </div>
+      </section>
+
+        <section id="skills">
+            <h2>Technical Skills</h2>
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <h3>Backend</h3>
+                    <div class="skill-tag">C#</div>
+                    <div class="skill-tag">.NET Core</div>
+                    <div class="skill-tag">Microservices</div>
+                    <div class="skill-tag">Web API</div>
+                </div>
+                <div class="skill-category">
+                    <h3>Data & Tools</h3>
+                    <div class="skill-tag">SQL Server</div>
+                    <div class="skill-tag">Kafka</div>
+                    <div class="skill-tag">Git</div>
+                    <div class="skill-tag">JIRA</div>
+                </div>
+            </div>
+        </section>
+
+        <section id="hobbies">
+            <h2>Beyond Coding</h2>
+            <div class="hobbies-list">
+                <span class="hobby-tag">Photography</span>
+                <span class="hobby-tag">Cricket</span>
+                <span class="hobby-tag">Tech Blogging</span>
+            </div>
+        </section>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 Bibhukrupa Barik. Professional Portfolio.</p>
+        <p style="opacity: 0.6; font-size: 0.7rem; margin-top: 10px;">Built with Passion & Clean Code</p>
+    </footer>
+
+</body>
+</html>
