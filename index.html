@@ -386,16 +386,21 @@
 
         function updateActiveNav() {
             let current = "";
-            const scrollPosition = window.pageYOffset;
+            const scrollPosition = window.pageYOffset + 150;
             
             sections.forEach((section) => {
-                const sectionTop = section.offsetTop - 150;
+                const sectionTop = section.offsetTop;
                 const sectionBottom = sectionTop + section.offsetHeight;
                 
                 if (scrollPosition >= sectionTop && scrollPosition < sectionBottom) {
                     current = section.getAttribute("id");
                 }
             });
+
+            // If we're near the bottom of the page, highlight the last section
+            if ((window.innerHeight + window.pageYOffset) >= document.body.offsetHeight - 100) {
+                current = sections[sections.length - 1].getAttribute("id");
+            }
 
             navLinks.forEach((link) => {
                 link.classList.remove("active");
