@@ -79,11 +79,11 @@
             font-size: 0.9rem;
         }
 
-        /* --- STICKY NAV --- */
+        /* --- FIXED NAVIGATION --- */
         nav {
-            background: rgba(30, 41, 59, 0.9);
+            background: rgba(30, 41, 59, 0.95);
             backdrop-filter: blur(10px);
-            padding: 5px 0;
+            padding: 10px 0; /* Added a bit more height to the bar */
             position: sticky;
             top: 0;
             z-index: 1000;
@@ -94,21 +94,23 @@
             list-style: none;
             display: flex;
             justify-content: center;
-            gap: 2px;
+            gap: 5px;
             flex-wrap: wrap;
         }
 
         nav a {
             color: white;
             text-decoration: none;
-            padding: 12px 15px;
+            padding: 6px 14px; /* Reduced vertical padding from 12px to 6px */
             font-weight: 500;
             font-size: 0.85rem;
             border-radius: 6px;
             transition: var(--transition);
+            display: inline-block;
+            line-height: 1.4;
         }
 
-        nav a:hover {
+        nav a:hover, nav a.active {
             background: var(--primary);
         }
 
@@ -221,37 +223,24 @@
             text-align: center;
         }
 
-        /* --- RESPONSIVE ADJUSTMENTS --- */
+        /* --- MOBILE REFINEMENTS --- */
         @media (max-width: 768px) {
             header {
                 padding-top: 60px;
                 clip-path: polygon(0 0, 100% 0, 100% 95%, 0% 100%);
             }
             
-            section {
-                padding: 30px 20px;
-            }
-
-            .projects-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .contact-info {
-                flex-direction: column;
-                align-items: center;
-                gap: 10px;
-            }
+            section { padding: 30px 20px; }
+            .projects-grid { grid-template-columns: 1fr; }
         }
 
         @media (max-width: 480px) {
+            nav { padding: 8px 0; }
             nav a {
-                padding: 10px 8px;
-                font-size: 0.75rem;
+                padding: 5px 10px; /* Even tighter for small mobile screens */
+                font-size: 0.8rem;
             }
-            
-            .experience-item, .project-card {
-                padding: 15px;
-            }
+            .contact-info { flex-direction: column; gap: 8px; }
         }
     </style>
 </head>
@@ -283,7 +272,6 @@
             <p class="intro">
                 <strong>Senior Software Engineer</strong> with over 5 years of professional experience in architecting, developing, and maintaining scalable enterprise solutions. 
                 I specialize in building robust backend systems using <strong>C#, .NET Core, and Microservices</strong>. 
-                I am a firm believer in clean code, automated testing, and continuous delivery to provide high-impact value to global clients.
             </p>
         </section>
 
@@ -293,68 +281,27 @@
                 <span class="date">Jul 2022 - Present</span>
                 <h3>Senior Software Developer</h3>
                 <h4>Esspl | Bhubaneswar</h4>
-                <p>Architecting and maintaining high-performance web applications for global logistics leaders. Focused on performance optimization and end-to-end system scalability using ASP.NET Core.</p>
-            </div>
-            <div class="experience-item">
-                <span class="date">Oct 2020 - Jun 2022</span>
-                <h3>Junior Developer</h3>
-                <h4>Omitritech | Bhubaneswar</h4>
-                <p>Spearheaded the design and deployment of custom web applications from the ground up. Managed database architecture and full-stack integration for client-facing platforms.</p>
+                <p>Architecting and maintaining high-performance web applications for global logistics leaders.</p>
             </div>
         </section>
 
         <section id="projects">
             <h2>Key Projects</h2>
             <div class="projects-grid">
-              
               <div class="project-card">
                 <span class="date">ESSPL | Client: Maersk</span>
                 <h3>Supply Chain Platform (SCP)</h3>
-                <p><strong>Focus:</strong> High-scale Microservices</p>
-                <p style="font-size: 0.8rem; margin-bottom: 15px; color: var(--primary);"><em>Tech: .NET Core, Microservices, Kafka, SQL</em></p>
                 <ul style="margin-left: 18px; font-size: 0.9rem; color: #555;">
                   <li>Engineered .NET Core microservices for seamless integrations.</li>
-                  <li>Developed high-performance REST APIs for massive data volumes.</li>
-                  <li>Implemented Kafka event streaming for real-time synchronization.</li>
                 </ul>
               </div>
-
               <div class="project-card">
                 <span class="date">ESSPL | Client: Maersk</span>
                 <h3>Supply Chain Management (SCM)</h3>
-                <p><strong>Focus:</strong> Destination & Customs Logistics</p>
-                <p style="font-size: 0.8rem; margin-bottom: 15px; color: var(--primary);"><em>Tech: ASP.NET, Web APIs, SQL Server</em></p>
                 <ul style="margin-left: 18px; font-size: 0.9rem; color: #555;">
                   <li>Enhanced Web APIs for cargo landing and customs workflows.</li>
-                  <li>Performed RCA on production defects to improve uptime.</li>
-                  <li>Managed data integrity using advanced SQL querying.</li>
                 </ul>
               </div>
-
-              <div class="project-card">
-                <span class="date">ESSPL | Client: Maersk</span>
-                <h3>Transport Management (TMS)</h3>
-                <p><strong>Focus:</strong> Origin-to-Port Planning</p>
-                <p style="font-size: 0.8rem; margin-bottom: 15px; color: var(--primary);"><em>Tech: ASP.NET, Web APIs, SQL Server</em></p>
-                <ul style="margin-left: 18px; font-size: 0.9rem; color: #555;">
-                  <li>Developed business logic for cargo movement from origin to port.</li>
-                  <li>Optimized workflows to improve shipment planning efficiency.</li>
-                  <li>Resolved critical issues related to data consistency.</li>
-                </ul>
-              </div>
-
-              <div class="project-card">
-                <span class="date">Omitritech | Client: Truckslot</span>
-                <h3>Truck Slot Reservation</h3>
-                <p><strong>Focus:</strong> End-to-End Development</p>
-                <p style="font-size: 0.8rem; margin-bottom: 15px; color: var(--primary);"><em>Tech: MVC, Web API, Entity Framework</em></p>
-                <ul style="margin-left: 18px; font-size: 0.9rem; color: #555;">
-                  <li>Led development of a reservation system for logistics compliance.</li>
-                  <li>Designed complete database schema and business logic.</li>
-                  <li>Integrated REST APIs for real-time slot availability.</li>
-                </ul>
-              </div>
-
             </div>
         </section>
 
@@ -365,7 +312,6 @@
                     <h3>Backend</h3>
                     <div class="skill-tag">C#</div>
                     <div class="skill-tag">.NET Core</div>
-                    <div class="skill-tag">Microservices</div>
                     <div class="skill-tag">Web API</div>
                 </div>
                 <div class="skill-category">
@@ -373,7 +319,6 @@
                     <div class="skill-tag">SQL Server</div>
                     <div class="skill-tag">Kafka</div>
                     <div class="skill-tag">Git</div>
-                    <div class="skill-tag">JIRA</div>
                 </div>
             </div>
         </section>
@@ -390,7 +335,6 @@
 
     <footer>
         <p>&copy; 2026 Bibhukrupa Barik. Professional Portfolio.</p>
-        <p style="opacity: 0.6; font-size: 0.7rem; margin-top: 10px;">Built with Passion & Clean Code</p>
     </footer>
 
 </body>
