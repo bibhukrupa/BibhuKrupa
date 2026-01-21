@@ -25,7 +25,7 @@
 
         html {
             scroll-behavior: smooth;
-            scroll-padding-top: 70px; /* Ensures headers don't get hidden under Nav */
+            scroll-padding-top: 70px;
         }
 
         body {
@@ -35,7 +35,6 @@
             background: var(--light-bg);
         }
 
-        /* --- IMPROVED HEADER --- */
         header {
             background: linear-gradient(135deg, #4338ca 0%, #7e22ce 100%);
             color: white;
@@ -51,44 +50,46 @@
             border: 4px solid rgba(255, 255, 255, 0.3);
             object-fit: cover;
             margin-bottom: 20px;
-            background: #eee; /* Placeholder color */
+            background: #eee;
         }
 
-        h1 { font-size: clamp(2.2rem, 8vw, 3.5rem); font-weight: 800; margin-bottom: 8px; letter-spacing: -1px; }
-        .subtitle { font-size: 1.1rem; opacity: 0.95; margin-bottom: 30px; font-weight: 400; }
+        h1 { 
+            font-size: clamp(2.2rem, 8vw, 3.5rem); 
+            font-weight: 800; 
+            margin-bottom: 8px; 
+            letter-spacing: -1px; 
+        }
+        
+        .subtitle { 
+            font-size: 1.1rem; 
+            opacity: 0.95; 
+            margin-bottom: 30px; 
+            font-weight: 400; 
+        }
 
-        /* Clean Alignment for Contact Info */
         .contact-container {
             display: flex;
             justify-content: center;
             align-items: center;
-            gap: 15px;
+            gap: 25px;
             flex-wrap: wrap;
             max-width: 800px;
             margin: 0 auto;
         }
 
-        .contact-link {
+        .contact-item {
             color: white;
-            text-decoration: none;
-            background: rgba(255, 255, 255, 0.15);
-            padding: 8px 18px;
-            border-radius: 8px;
-            font-size: 0.85rem;
-            font-weight: 500;
-            transition: var(--transition);
-            border: 1px solid rgba(255, 255, 255, 0.1);
             display: flex;
             align-items: center;
             gap: 8px;
+            font-size: 0.95rem;
         }
 
-        .contact-link:hover {
-            background: rgba(255, 255, 255, 0.25);
-            transform: translateY(-2px);
+        .contact-item a {
+            color: white;
+            text-decoration: none;
         }
 
-        /* --- STICKY NAV WITH SELECTION STATE --- */
         nav {
             background: rgba(30, 41, 59, 0.98);
             backdrop-filter: blur(10px);
@@ -116,13 +117,15 @@
             transition: var(--transition);
         }
 
-        /* The class applied by JS when section is active */
+        nav a:hover {
+            color: rgba(255, 255, 255, 0.9);
+        }
+
         nav a.active {
             color: white;
             background: var(--primary);
         }
 
-        /* --- CONTENT CONTAINERS --- */
         .container {
             max-width: 900px;
             margin: 0 auto;
@@ -154,7 +157,6 @@
             border-radius: 4px;
         }
 
-        /* --- PROJECTS LINE-BY-LINE --- */
         .projects-list {
             display: flex;
             flex-direction: column;
@@ -162,7 +164,7 @@
         }
 
         .project-card {
-            border-left: 4px solid #e2e8f0;
+            border-left: 4px solid var(--primary);
             background: #fcfcfd;
             padding: 30px;
             border-radius: 0 16px 16px 0;
@@ -171,7 +173,7 @@
         }
 
         .project-card:hover {
-            border-left-color: var(--primary);
+            border-left-color: var(--secondary);
             background: var(--white);
             box-shadow: 0 10px 30px rgba(0,0,0,0.05);
             transform: translateX(5px);
@@ -187,8 +189,17 @@
             display: block;
         }
 
-        .project-card h3 { color: var(--dark); margin-bottom: 12px; font-size: 1.3rem; }
-        .project-card p { font-size: 0.95rem; color: #64748b; margin-bottom: 15px; }
+        .project-card h3 { 
+            color: var(--dark); 
+            margin-bottom: 12px; 
+            font-size: 1.3rem; 
+        }
+        
+        .project-card p { 
+            font-size: 0.95rem; 
+            color: #64748b; 
+            margin-bottom: 15px; 
+        }
 
         .tech-tags {
             display: flex;
@@ -205,14 +216,12 @@
             font-weight: 700;
         }
 
-        /* --- EXPERIENCE --- */
         .exp-item {
             margin-bottom: 30px;
             padding-left: 20px;
-            border-left: 2px dashed #cbd5e1;
+            border-left: 3px solid var(--primary);
         }
 
-        /* --- HOBBIES --- */
         .hobbies-grid {
             display: flex;
             flex-wrap: wrap;
@@ -228,12 +237,21 @@
             font-weight: 500;
         }
 
-        footer { background: var(--dark); color: white; padding: 50px 20px; text-align: center; }
+        footer { 
+            background: var(--dark); 
+            color: white; 
+            padding: 50px 20px; 
+            text-align: center; 
+        }
 
         @media (max-width: 768px) {
             header { padding: 50px 15px 80px; }
             section { padding: 30px 20px; }
-            .contact-container { flex-direction: column; align-items: stretch; }
+            .contact-container { 
+                flex-direction: column; 
+                align-items: center;
+                gap: 15px;
+            }
             nav a { padding: 6px 10px; font-size: 0.8rem; }
         }
     </style>
@@ -246,9 +264,9 @@
         <p class="subtitle">Senior Software Developer | .NET & Microservices Expert</p>
         
         <div class="contact-container">
-            <span class="contact-link" style="background:none; border:none; cursor:default;">📍 Bhubaneswar, India</span>
-            <a href="mailto:bibhukrupabarik@gmail.com" class="contact-link">✉️ bibhukrupabarik@gmail.com</a>
-            <a href="tel:+917681829976" class="contact-link">📱 +91 7681829976</a>
+            <div class="contact-item">📍 Bhubaneswar, India</div>
+            <div class="contact-item">✉️ <a href="mailto:bibhukrupabarik@gmail.com">bibhukrupabarik@gmail.com</a></div>
+            <div class="contact-item">📱 <a href="tel:+917681829976">+91 7681829976</a></div>
         </div>
     </header>
 
@@ -258,6 +276,7 @@
             <li><a href="#experience" class="nav-link">Experience</a></li>
             <li><a href="#projects" class="nav-link">Projects</a></li>
             <li><a href="#skills" class="nav-link">Skills</a></li>
+            <li><a href="#hobbies" class="nav-link">Hobbies</a></li>
         </ul>
     </nav>
 
@@ -276,7 +295,7 @@
                 <h4 style="color:#64748b; font-weight:500;">Esspl | Bhubaneswar</h4>
                 <p style="margin-top:10px;">Architecting high-performance web applications for global logistics leaders using ASP.NET Core.</p>
             </div>
-            <div class="exp-item" style="border-bottom:none; margin-bottom:0;">
+            <div class="exp-item" style="margin-bottom:0;">
                 <span style="color:var(--primary); font-weight:700; font-size:0.8rem;">OCT 2020 - JUN 2022</span>
                 <h3 style="margin:5px 0;">Junior Developer</h3>
                 <h4 style="color:#64748b; font-weight:500;">Omitritech | Bhubaneswar</h4>
@@ -377,7 +396,7 @@
 
             navLinks.forEach((link) => {
                 link.classList.remove("active");
-                if (link.getAttribute("href").includes(current)) {
+                if (current && link.getAttribute("href") === "#" + current) {
                     link.classList.add("active");
                 }
             });
