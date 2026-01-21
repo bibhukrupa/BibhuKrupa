@@ -83,11 +83,22 @@
             align-items: center;
             gap: 8px;
             font-size: 0.95rem;
+            transition: var(--transition);
         }
 
         .contact-item a {
             color: white;
             text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .contact-item:hover {
+            transform: translateY(-2px);
+            opacity: 0.9;
+        }
+
+        .contact-item a:hover {
+            text-decoration: underline;
         }
 
         nav {
@@ -251,22 +262,31 @@
         .hobbies-grid {
             display: flex;
             flex-wrap: wrap;
-            gap: 12px;
+            gap: 15px;
         }
 
         .hobby-card {
-            background: var(--dark);
-            color: white;
-            padding: 10px 24px;
+            background: var(--white);
+            color: var(--dark);
+            padding: 15px 28px;
             border-radius: 12px;
-            font-size: 0.9rem;
+            font-size: 0.95rem;
             font-weight: 500;
+            border: 2px solid #e2e8f0;
+            transition: var(--transition);
+        }
+
+        .hobby-card:hover {
+            border-color: var(--primary);
+            background: var(--primary-light);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(99, 102, 241, 0.1);
         }
 
         footer { 
             background: var(--dark); 
             color: white; 
-            padding: 50px 20px; 
+            padding: 30px 20px; 
             text-align: center; 
         }
 
@@ -290,7 +310,9 @@
         <p class="subtitle">Senior Software Developer | .NET & Microservices Expert</p>
         
         <div class="contact-container">
-            <div class="contact-item">📍 Bhubaneswar, India</div>
+            <div class="contact-item">
+                <a href="https://www.google.com/maps/search/?api=1&query=Bhubaneswar,India" target="_blank">📍 Bhubaneswar, India</a>
+            </div>
             <div class="contact-item">✉️ <a href="mailto:bibhukrupabarik@gmail.com">bibhukrupabarik@gmail.com</a></div>
             <div class="contact-item">📱 <a href="tel:+917681829976">+91 7681829976</a></div>
         </div>
@@ -392,7 +414,7 @@
             </div>
         </section>
 
-        <section id="hobbies">
+        <section id="hobbies" style="background: linear-gradient(135deg, #f8fafc 0%, #e0e7ff 100%);">
             <h2>Beyond Coding</h2>
             <div class="hobbies-grid">
                 <span class="hobby-card">📸 Photography</span>
