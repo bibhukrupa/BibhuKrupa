@@ -222,6 +222,32 @@
             border-left: 3px solid var(--primary);
         }
 
+        .skill-card {
+            background: var(--white);
+            padding: 30px;
+            border-radius: 15px;
+            border: 2px solid #e2e8f0;
+            transition: var(--transition);
+        }
+
+        .skill-card:hover {
+            border-color: var(--primary);
+            box-shadow: 0 8px 25px rgba(99, 102, 241, 0.15);
+            transform: translateY(-3px);
+        }
+
+        .skill-icon {
+            font-size: 2rem;
+            margin-bottom: 12px;
+        }
+
+        .skill-title {
+            color: var(--dark);
+            font-size: 1.1rem;
+            margin-bottom: 18px;
+            font-weight: 600;
+        }
+
         .hobbies-grid {
             display: flex;
             flex-wrap: wrap;
@@ -349,14 +375,16 @@
         <section id="skills">
             <h2>Technical Skills</h2>
             <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px;">
-                <div style="background: var(--light-bg); padding: 25px; border-radius: 15px;">
-                    <h3 style="font-size:1rem; margin-bottom:15px; color:var(--primary);">Backend Development</h3>
+                <div class="skill-card">
+                    <div class="skill-icon">💻</div>
+                    <h3 class="skill-title">Backend Development</h3>
                     <div class="tech-tags">
                         <span class="tag">C#</span><span class="tag">.NET Core</span><span class="tag">Microservices</span><span class="tag">Web API</span><span class="tag">MVC</span>
                     </div>
                 </div>
-                <div style="background: var(--light-bg); padding: 25px; border-radius: 15px;">
-                    <h3 style="font-size:1rem; margin-bottom:15px; color:var(--primary);">Data & Messaging</h3>
+                <div class="skill-card">
+                    <div class="skill-icon">🗄️</div>
+                    <h3 class="skill-title">Data & Messaging</h3>
                     <div class="tech-tags">
                         <span class="tag">SQL Server</span><span class="tag">Kafka</span><span class="tag">ADO.NET</span><span class="tag">Entity Framework</span>
                     </div>
