@@ -83,7 +83,7 @@
         nav {
             background: rgba(30, 41, 59, 0.95);
             backdrop-filter: blur(10px);
-            padding: 12px 0; /* Vertical breathing room for the bar */
+            padding: 10px 0; /* Added a bit more height to the bar */
             position: sticky;
             top: 0;
             z-index: 1000;
@@ -101,16 +101,16 @@
         nav a {
             color: white;
             text-decoration: none;
-            padding: 6px 14px; /* Slimmer selection box */
+            padding: 6px 14px; /* Reduced vertical padding from 12px to 6px */
             font-weight: 500;
             font-size: 0.85rem;
             border-radius: 6px;
             transition: var(--transition);
             display: inline-block;
-            line-height: 1.2;
+            line-height: 1.4;
         }
 
-        nav a:hover {
+        nav a:hover, nav a.active {
             background: var(--primary);
         }
 
@@ -237,11 +237,10 @@
         @media (max-width: 480px) {
             nav { padding: 8px 0; }
             nav a {
-                padding: 4px 10px; /* Extra slim for very small devices */
+                padding: 5px 10px; /* Even tighter for small mobile screens */
                 font-size: 0.8rem;
             }
             .contact-info { flex-direction: column; gap: 8px; }
-            h1 { margin-top: 10px; }
         }
     </style>
 </head>
@@ -300,11 +299,11 @@
               <div class="project-card">
                 <span class="date">ESSPL | Client: Maersk</span>
                 <h3>Supply Chain Platform (SCP)</h3>
-                <p><strong>Focus:</strong> High-scale Microservices & Event Streaming</p>
-                <p style="font-size: 0.8rem; margin-bottom: 12px; color: var(--primary);"><em>Tech: .NET Core, Kafka, Web APIs, SQL</em></p>
+                <p><strong>Focus:</strong> High-scale Microservices</p>
+                <p style="font-size: 0.8rem; margin-bottom: 15px; color: var(--primary);"><em>Tech: .NET Core, Microservices, Kafka, SQL</em></p>
                 <ul style="margin-left: 18px; font-size: 0.9rem; color: #555;">
-                  <li>Engineered .NET Core microservices for seamless supply chain integrations.</li>
-                  <li>Developed high-performance REST APIs to process massive data volumes.</li>
+                  <li>Engineered .NET Core microservices for seamless integrations.</li>
+                  <li>Developed high-performance REST APIs for massive data volumes.</li>
                   <li>Implemented Kafka event streaming for real-time synchronization.</li>
                 </ul>
               </div>
@@ -313,34 +312,34 @@
                 <span class="date">ESSPL | Client: Maersk</span>
                 <h3>Supply Chain Management (SCM)</h3>
                 <p><strong>Focus:</strong> Destination & Customs Logistics</p>
-                <p style="font-size: 0.8rem; margin-bottom: 12px; color: var(--primary);"><em>Tech: ASP.NET, Web APIs, SQL Server</em></p>
+                <p style="font-size: 0.8rem; margin-bottom: 15px; color: var(--primary);"><em>Tech: ASP.NET, Web APIs, SQL Server</em></p>
                 <ul style="margin-left: 18px; font-size: 0.9rem; color: #555;">
-                  <li>Enhanced Web APIs to handle cargo landing and customs clearance.</li>
-                  <li>Performed Root Cause Analysis (RCA) on production defects.</li>
-                  <li>Managed data integrity and validation using advanced SQL querying.</li>
+                  <li>Enhanced Web APIs for cargo landing and customs workflows.</li>
+                  <li>Performed RCA on production defects to improve uptime.</li>
+                  <li>Managed data integrity using advanced SQL querying.</li>
                 </ul>
               </div>
 
               <div class="project-card">
                 <span class="date">ESSPL | Client: Maersk</span>
                 <h3>Transport Management (TMS)</h3>
-                <p><strong>Focus:</strong> Origin-to-Port Logistics Planning</p>
-                <p style="font-size: 0.8rem; margin-bottom: 12px; color: var(--primary);"><em>Tech: ASP.NET, Web APIs, SQL Server</em></p>
+                <p><strong>Focus:</strong> Origin-to-Port Planning</p>
+                <p style="font-size: 0.8rem; margin-bottom: 15px; color: var(--primary);"><em>Tech: ASP.NET, Web APIs, SQL Server</em></p>
                 <ul style="margin-left: 18px; font-size: 0.9rem; color: #555;">
                   <li>Developed business logic for cargo movement from origin to port.</li>
-                  <li>Optimized transportation workflows to improve shipment efficiency.</li>
-                  <li>Resolved critical issues related to data consistency and flow.</li>
+                  <li>Optimized workflows to improve shipment planning efficiency.</li>
+                  <li>Resolved critical issues related to data consistency.</li>
                 </ul>
               </div>
 
               <div class="project-card">
                 <span class="date">Omitritech | Client: Truckslot</span>
-                <h3>Truck Slot Reservation System</h3>
-                <p><strong>Focus:</strong> End-to-End Application Development</p>
-                <p style="font-size: 0.8rem; margin-bottom: 12px; color: var(--primary);"><em>Tech: MVC, Web API, Entity Framework, SQL</em></p>
+                <h3>Truck Slot Reservation</h3>
+                <p><strong>Focus:</strong> End-to-End Development</p>
+                <p style="font-size: 0.8rem; margin-bottom: 15px; color: var(--primary);"><em>Tech: MVC, Web API, Entity Framework</em></p>
                 <ul style="margin-left: 18px; font-size: 0.9rem; color: #555;">
-                  <li>Led end-to-end development for logistics compliance.</li>
-                  <li>Designed complete database schema and server-side logic.</li>
+                  <li>Led development of a reservation system for logistics compliance.</li>
+                  <li>Designed complete database schema and business logic.</li>
                   <li>Integrated REST APIs for real-time slot availability.</li>
                 </ul>
               </div>
